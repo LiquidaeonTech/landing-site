@@ -4,35 +4,35 @@
 <head>
     <meta charset="utf-8">
     <meta property="og:title" content="Liquidaeon" />
-    <meta property="og:site_name" content="Liquidaeon.tech"/>
+    <meta property="og:site_name" content="Liquidaeon.tech" />
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
     <meta property="og:description" content="Liquidaeon introduces a new paradigm, the commodification of time, enabling users with minimal resources to participate in the cryptocurrency ecosystem." />
     <meta name="twitter:card" value="Liquidaeon introduces a new paradigm, the commodification of time, enabling users with minimal resources to participate in the cryptocurrency ecosystem.">
     <meta name="description" content="Liquidaeon introduces a new paradigm, the commodification of time, enabling users with minimal resources to participate in the cryptocurrency ecosystem." />
-<meta property="og:image" content="http://liquidaeon.tech/icon.png" />
+    <meta property="og:image" content="http://liquidaeon.tech/icon.png" />
     <title>Liquidaeon</title>
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <style>
         @-ms-viewport {
             width: device-width;
         }
-
+        
         .pure-menu {
             background: grey;
             position: fixed;
             top: 0;
         }
-
+        
         .pure-menu-link {
             color: white !important;
         }
-
+        
         .pure-menu-link:hover {
             background-color: transparent !important;
         }
-
+        
         .logo {
             background-position: center;
             height: 150px;
@@ -40,77 +40,65 @@
             background-size: contain;
             background-repeat: no-repeat;
         }
-
+        
         .techspecs {}
-
+        
         .techspecs {
             color: white;
         }
-
+        
         .roadmap {
             color: white !important;
         }
-
+        
         .roadmap .pure-u-1 ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             text-align: right;
         }
-
+        
         .roadmap .pure-u-1 h3 {
             margin-top: 30px !important;
             margin-bottom: -25px !important;
         }
-
+        
         .techspecs .pure-u-1-3 .spec-item .fa {
             font-size: 3em;
             text-align: center;
         }
-
+        
         .centered {
             display: table;
             margin: 0 auto;
             text-align: center;
         }
-
+        
         .content {
             padding: 0em 1em !important;
         }
-
+        
         .header em h2 {
             color: black !important;
         }
-
+        
         .button-success,
-        .button-error,
-        .button-warning,
         .button-secondary {
             color: white;
             border-radius: 4px;
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
         }
-
+        
         .button-success {
             background: rgb(28, 184, 65);
             /* this is a green */
         }
-
-        .button-error {
-            background: rgb(202, 60, 60);
-            /* this is a maroon */
-        }
-
-        .button-warning {
-            background: rgb(223, 117, 20);
-            /* this is an orange */
-        }
-
+        
         .button-secondary {
             background: rgb(66, 184, 221);
             /* this is a light blue */
         }
-
+        
         .scene--full {
             position: fixed;
             top: 0;
@@ -119,7 +107,7 @@
             height: 100vh;
             z-index: -1;
         }
-
+        
         #layout {
             height: 100%;
             z-index: 0;
@@ -134,56 +122,25 @@
             background: linear-gradient(rgba(255, 0, 0, 0), rgba(0, 0, 0, 1));
             /* Standard syntax */
         }
-
+        
         body {
             color: #777;
         }
-
-        .pure-img-responsive {
-            max-width: 100%;
-            height: auto;
-        }
-
-
-        /*
-Add transition to containers so they can push in and out.
-*/
-
-        #layout,
-        #menu,
-        .menu-link {
+        
+        #layout {
             -webkit-transition: all 0.2s ease-out;
             -moz-transition: all 0.2s ease-out;
             -ms-transition: all 0.2s ease-out;
             -o-transition: all 0.2s ease-out;
             transition: all 0.2s ease-out;
         }
-
-
-        /*
-This is the parent `<div>` that contains the menu and the content area.
-*/
-
+        
         #layout {
             position: relative;
             left: 0;
             padding-left: 0;
         }
-
-        #layout.active #menu {
-            left: 150px;
-            width: 150px;
-        }
-
-        #layout.active .menu-link {
-            left: 150px;
-        }
-
-
-        /*
-The content `<div>` is where all your content goes.
-*/
-
+        
         .content {
             margin: 0 auto;
             padding: 0 2em;
@@ -191,7 +148,7 @@ The content `<div>` is where all your content goes.
             margin-bottom: 50px;
             line-height: 1.6em;
         }
-
+        
         .header {
             margin: 0;
             color: #333;
@@ -199,209 +156,56 @@ The content `<div>` is where all your content goes.
             margin-top: 10px;
             padding: 2.5em 2em 0;
         }
-
+        
         .header h1 {
             margin: 0.2em 0;
             font-size: 3em;
             font-weight: 300;
         }
-
+        
         .header h2 {
             font-weight: 300;
             color: #ccc;
             padding: 0;
             margin-top: 0;
         }
-
+        
         .content-subhead {
             margin: 50px 0 20px 0;
             font-weight: 300;
             color: white;
             font-size: 1.75em;
         }
-
-
-        /*
-The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
-appears on the left side of the page.
-*/
-
-        #menu {
-            margin-left: -150px;
-            /* "#menu" width */
-            width: 150px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            z-index: 1000;
-            /* so the menu or its navicon stays above all content */
-            background: #191818;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-
-        /*
-    All anchors inside the menu should be styled like this.
-    */
-
-        #menu a {
-            color: #999;
-            border: none;
-            padding: 0.6em 0 0.6em 0.6em;
-        }
-
-
-        /*
-    Remove all background/borders, since we are applying them to #menu.
-    */
-
-        #menu .pure-menu,
-        #menu .pure-menu ul {
-            border: none;
-            background: transparent;
-        }
-
-
-        /*
-    Add that light border to separate items into groups.
-    */
-
-        #menu .pure-menu ul,
-        #menu .pure-menu .menu-item-divided {
-            border-top: 1px solid #333;
-        }
-
-
-        /*
-        Change color of the anchor links on hover/focus.
-        */
-
-        #menu .pure-menu li a:hover,
-        #menu .pure-menu li a:focus {
-            background: #333;
-        }
-
-
-        /*
-    This styles the selected menu item `<li>`.
-    */
-
-        #menu .pure-menu-selected,
-        #menu .pure-menu-heading {
-            background: #1f8dd6;
-        }
-
-
-        /*
-        This styles a link within a selected menu item `<li>`.
-        */
-
-        #menu .pure-menu-selected a {
-            color: #fff;
-        }
-
-
-        /*
-    This styles the menu heading.
-    */
-
-        #menu .pure-menu-heading {
-            font-size: 110%;
-            color: #fff;
-            margin: 0;
-        }
-
-
-        /* -- Dynamic Button For Responsive Menu -------------------------------------*/
-
-        /*
-The button to open/close the Menu is custom-made and not part of Pure. Here's
-how it works:
-*/
-
-        /*
-`.menu-link` represents the responsive menu toggle that shows/hides on
-small screens.
-*/
-
-        .menu-link {
-            position: fixed;
-            display: block;
-            /* show this only on small screens */
-            top: 0;
-            left: 0;
-            /* "#menu width" */
-            background: #000;
-            background: rgba(0, 0, 0, 0.7);
-            font-size: 10px;
-            /* change this value to increase/decrease button size */
-            z-index: 10;
-            width: 2em;
-            height: auto;
-            padding: 2.1em 1.6em;
-        }
-
-        .menu-link:hover,
-        .menu-link:focus {
-            background: #000;
-        }
-
-        .menu-link span {
-            position: relative;
-            display: block;
-        }
-
-        .menu-link span,
-        .menu-link span:before,
-        .menu-link span:after {
-            background-color: #fff;
-            width: 100%;
-            height: 0.2em;
-        }
-
-        .menu-link span:before,
-        .menu-link span:after {
-            position: absolute;
-            margin-top: -0.6em;
-            content: " ";
-        }
-
-        .menu-link span:after {
-            margin-top: 0.6em;
-        }
-
+        
         .spec-item {
             text-align: center;
         }
-
+        
         .pure-u-1-3 .detail {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100%;
         }
-
+        
         #intro {
             margin: 20px;
             background-color: rgba(0, 0, 0, .15);
             color: white;
             padding: 15px;
         }
-
+        
         .spacer {
             height: 20px;
         }
         
         .big-icon {
-    font-size: 4em;
-}
+            font-size: 4em;
+        }
         
         a {
             color: white;
         }
-
     </style>
 </head>
 
@@ -423,12 +227,9 @@ small screens.
                 <a class="pure-button button-success pure-button-disabled" href="#"> <i class="fa fa-download fa-lg"></i> Download Whitepaper </a>
                 <a class="pure-button button-secondary" target="_blank" href="http://t.me/Liquidaeon"> <i class="fa fa-telegram fa-lg"></i> Join Telegram </a>
             </div>
-    
             <div id="intro">
                 <p> The cryptocurrency ecosystem continues to grow, with new innovations and applications being developed every day. However, few developers have yet to solve the ultimate problem facing cryptocurrency: global adoption. The internet has shifted from the domain of business and hobbyists to the realm of more casual users. Cryptocurrency will soon undergo that same shift from investors and hobbyists to every day users. Liquidaeon is designed to facilitate that shift by tearing down the conventional barriers to entry. Acquiring cryptocurrency requires significant overhead, such as expensive hardware for mining or considerable capital for staking. Liquidaeon introduces a new paradigm, the commodification of time, enabling users with minimal resources to participate in the cryptocurrency ecosystem. </p>
-       
-                    </div>
-              
+            </div>
             <div class="content">
                 <div id="specs">
                     <h2 class="content-subhead" style="text-align: center">Token Technical Specifications</h2>
@@ -511,21 +312,20 @@ small screens.
                 </div>
             </div>
         </div>
-        
         <div class="centered">
             <div class="pure-grid">
-                        <div class="pure-u-6-24 pure-u-xl-3-24"> <a target="_blank" href="http://t.me/LiquidaeonTech"><i class="fa fa-telegram big-icon"></i></a> </div>
-                        <div class="pure-u-6-24 pure-u-xl-3-24"> <a target="_blank" href="http://twitter.com/LiquidaeonTech"><i class="fa fa-twitter big-icon"></i></a> </div>
-                        <div class="pure-u-6-24 pure-u-xl-3-24"> <a target="_blank" href="http://fb.me/Liquidaeon"><i class="fa fa-facebook big-icon"></i></a> </div>
-                        <div class="pure-u-6-24 pure-u-xl-3-24"> <a target="_blank" href="http://instagr.am/Liquidaeon"><i class="fa fa-instagram big-icon"></i> </a></div>
-                        <div class="pure-u-6-24 pure-u-xl-3-24"> <a target="_blank" href="http://medium.com/@liquidaeon"><i class="fa fa-medium big-icon"></i> </a></div>
-                        <div class="pure-u-6-24 pure-u-xl-3-24">
-                            <a target="_blank" href="http://reddit.com/r/liquidaeon"> <i class="fa fa-reddit big-icon"></i></a>
-                        </div>
+                <div class="pure-u-6-24 pure-u-xl-3-24"> <a target="_blank" href="http://t.me/LiquidaeonTech"><i class="fa fa-telegram big-icon"></i></a> </div>
+                <div class="pure-u-6-24 pure-u-xl-3-24"> <a target="_blank" href="http://twitter.com/LiquidaeonTech"><i class="fa fa-twitter big-icon"></i></a> </div>
+                <div class="pure-u-6-24 pure-u-xl-3-24"> <a target="_blank" href="http://fb.me/Liquidaeon"><i class="fa fa-facebook big-icon"></i></a> </div>
+                <div class="pure-u-6-24 pure-u-xl-3-24"> <a target="_blank" href="http://instagr.am/Liquidaeon"><i class="fa fa-instagram big-icon"></i> </a></div>
+                <div class="pure-u-6-24 pure-u-xl-3-24"> <a target="_blank" href="http://medium.com/@liquidaeon"><i class="fa fa-medium big-icon"></i> </a></div>
+                <div class="pure-u-6-24 pure-u-xl-3-24">
+                    <a target="_blank" href="http://reddit.com/r/liquidaeon"> <i class="fa fa-reddit big-icon"></i></a>
+                </div>
                 <div class="pure-u-1-1">
-                <div style="color:white; margin-top: 20px; margin-bottom: 20px;" class="is-center">L I Q U I D A E O N &nbsp; 2 0 1 7</div>
+                    <div style="color:white; margin-top: 20px; margin-bottom: 20px;" class="is-center">L I Q U I D A E O N &nbsp; 2 0 1 7</div>
+                </div>
             </div>
-                    </div>
         </div>
     </div>
     <script src="js/three.min.js"></script>
@@ -533,11 +333,11 @@ small screens.
     <script src="js/TweenMax.min.js"></script>
     <script type="text/javascript">
         var canvas = document.querySelector('#scene');
-        var width = canvas.offsetWidth,
-            height = canvas.offsetHeight;
+        var width = canvas.offsetWidth
+            , height = canvas.offsetHeight;
         var renderer = new THREE.WebGLRenderer({
-            canvas: canvas,
-            antialias: true
+            canvas: canvas
+            , antialias: true
         });
         renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
         renderer.setSize(width, height);
@@ -559,9 +359,9 @@ small screens.
             vector._o = vector.clone();
         }
         var material = new THREE.MeshPhongMaterial({
-            emissive: 0x23f660,
-            emissiveIntensity: 0.4,
-            shininess: 0
+            emissive: 0x23f660
+            , emissiveIntensity: 0.4
+            , shininess: 0
         });
         var shape = new THREE.Mesh(geometry, material);
         scene.add(shape);
@@ -594,14 +394,12 @@ small screens.
             renderer.setSize(width, height);
         }
         var mouse = new THREE.Vector2(0.8, 0.5);
-
         requestAnimationFrame(render);
         var resizeTm;
-        window.addEventListener("resize", function() {
+        window.addEventListener("resize", function () {
             resizeTm = clearTimeout(resizeTm);
             resizeTm = setTimeout(onResize, 200);
         });
-
     </script>
 </body>
 
