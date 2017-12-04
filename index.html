@@ -73,6 +73,8 @@
             color: black !important;
         }
         
+        .button-airdrop,
+        .button-medium,
         .button-success,
         .button-secondary {
             color: white;
@@ -88,6 +90,14 @@
         .button-secondary {
             background: rgb(66, 184, 221);
             /* this is a light blue */
+        }
+        
+        .button-airdrop {
+            background: rgb(169, 232, 68);
+        }
+        
+        .button-medium {
+            background: rgb(0, 0, 0);
         }
         
         .scene--full {
@@ -127,7 +137,7 @@
         }
         
         .header {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             color: #333;
             text-align: center;
             margin-top: 20px;
@@ -208,6 +218,10 @@
         /*
       
 */
+        
+        .pure-button-group .pure-button {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -218,8 +232,12 @@
             <div class="header">
                 <div class="logo"></div>
                 <h1>LIQUIDAEON</h1> <em><h2>a second-generation cryptoeconomic model powered by Ethereum and Time</h2></em>
-                <a class="pure-button button-success pure-button-disabled" href="#"> <i class="fa fa-download fa-lg"></i> Download Whitepaper </a>
-                <a class="pure-button button-secondary" target="_blank" href="http://t.me/Liquidaeon"> <i class="fa fa-telegram fa-lg"></i> Join Telegram </a>
+                <div class="pure-button-group" role="group">
+                    <button class="pure-button button-success pure-button-disabled" href="#"> <i class="fa fa-download fa-lg"></i> Download Whitepaper </button>
+                    <button class="pure-button button-medium" target="_blank" href="https://medium.com/@liquidaeon"> <i class="fa fa-medium fa-lg"></i> Read Blog </button>
+                    <button class="pure-button button-secondary" target="_blank" href="http://t.me/Liquidaeon"> <i class="fa fa-telegram fa-lg"></i> Join Discussion </button>
+                    <button class="pure-button button-airdrop pure-button-disabled" href="#"> <i class="fa fa-bolt fa-lg"></i> Join Airdrop </button>
+                </div>
             </div>
             <div class="content">
                 <div id="intro">
