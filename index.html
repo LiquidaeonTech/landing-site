@@ -12,25 +12,13 @@
     <meta property="og:image" content="http://liquidaeon.tech/icon.png" />
     <title>Liquidaeon</title>
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <style>
         @-ms-viewport {
             width: device-width;
-        }
-        
-        .pure-menu {
-            background: grey;
-            position: fixed;
-            top: 0;
-        }
-        
-        .pure-menu-link {
-            color: white !important;
-        }
-        
-        .pure-menu-link:hover {
-            background-color: transparent !important;
         }
         
         .logo {
@@ -41,10 +29,13 @@
             background-repeat: no-repeat;
         }
         
-        .techspecs {}
-        
         .techspecs {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
             color: white;
+            background-color: rgba(0, 0, 0, .1);
+            padding: 10px;
         }
         
         .roadmap {
@@ -127,20 +118,6 @@
             color: #777;
         }
         
-        #layout {
-            -webkit-transition: all 0.2s ease-out;
-            -moz-transition: all 0.2s ease-out;
-            -ms-transition: all 0.2s ease-out;
-            -o-transition: all 0.2s ease-out;
-            transition: all 0.2s ease-out;
-        }
-        
-        #layout {
-            position: relative;
-            left: 0;
-            padding-left: 0;
-        }
-        
         .content {
             margin: 0 auto;
             padding: 0 2em;
@@ -150,11 +127,10 @@
         }
         
         .header {
-            margin: 0;
+            margin-bottom: 20px;
             color: #333;
             text-align: center;
-            margin-top: 10px;
-            padding: 2.5em 2em 0;
+            margin-top: 20px;
         }
         
         .header h1 {
@@ -171,7 +147,6 @@
         }
         
         .content-subhead {
-            margin: 50px 0 20px 0;
             font-weight: 300;
             color: white;
             font-size: 1.75em;
@@ -189,14 +164,14 @@
         }
         
         #intro {
-            margin: 20px;
             background-color: rgba(0, 0, 0, .15);
             color: white;
             padding: 15px;
+            text-align: justify;
         }
         
         .spacer {
-            height: 20px;
+            height: 40px;
         }
         
         .big-icon {
@@ -206,20 +181,39 @@
         a {
             color: white;
         }
+        
+        .charts {
+            padding: 10px;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, .1);
+        }
+        
+        .chartlabel {
+            font-weight: bold;
+            font-size: 1em;
+            color: white;
+        }
+        
+        #dis0,
+        #dis1 {
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            width: 50px;
+        }
+        /*
+      
+*/
     </style>
 </head>
 
 <body>
     <canvas class="scene scene--full" id="scene"></canvas>
     <div id="layout">
-        <div class="pure-menu pure-menu-horizontal">
-            <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a class="pure-menu-link">LIQUIDAEON</a></li>
-                <li class="pure-menu-item"><a href="#intro" class="pure-menu-link">Introduction</a></li>
-                <li class="pure-menu-item"><a href="#specs" class="pure-menu-link">Tech Specs</a></li>
-                <li class="pure-menu-item"><a href="#road" class="pure-menu-link">Roadmap</a></li>
-            </ul>
-        </div>
         <div id="main">
             <div class="header">
                 <div class="logo"></div>
@@ -227,52 +221,69 @@
                 <a class="pure-button button-success pure-button-disabled" href="#"> <i class="fa fa-download fa-lg"></i> Download Whitepaper </a>
                 <a class="pure-button button-secondary" target="_blank" href="http://t.me/Liquidaeon"> <i class="fa fa-telegram fa-lg"></i> Join Telegram </a>
             </div>
-            <div id="intro">
-                <p> The cryptocurrency ecosystem continues to grow, with new innovations and applications being developed every day. However, few developers have yet to solve the ultimate problem facing cryptocurrency: global adoption. The internet has shifted from the domain of business and hobbyists to the realm of more casual users. Cryptocurrency will soon undergo that same shift from investors and hobbyists to every day users. Liquidaeon is designed to facilitate that shift by tearing down the conventional barriers to entry. Acquiring cryptocurrency requires significant overhead, such as expensive hardware for mining or considerable capital for staking. Liquidaeon introduces a new paradigm, the commodification of time, enabling users with minimal resources to participate in the cryptocurrency ecosystem. </p>
-            </div>
             <div class="content">
+                <div id="intro">
+                    <p> The cryptocurrency ecosystem continues to grow, with new innovations and applications being developed every day. However, few developers have yet to solve the ultimate problem facing cryptocurrency: global adoption. The internet has shifted from the domain of business and hobbyists to the realm of more casual users. Cryptocurrency will soon undergo that same shift from investors and hobbyists to every day users. Liquidaeon is designed to facilitate that shift by tearing down the conventional barriers to entry. Acquiring cryptocurrency requires significant overhead, such as expensive hardware for mining or considerable capital for staking. Liquidaeon introduces a new paradigm, the commodification of time, enabling users with minimal resources to participate in the cryptocurrency ecosystem. </p>
+                </div>
                 <div id="specs">
                     <h2 class="content-subhead" style="text-align: center">Token Technical Specifications</h2>
                     <div class="centered">
-                        <div class="pure-g techspecs">
-                            <div class="pure-u-1-3" style="text-align: center;"><strong>GENERATOR</strong> </div>
-                            <div class="pure-u-1-3"></div>
-                            <div class="pure-u-1-3" style="text-align: center;"> <strong>LIQUID</strong> </div>
-                            <div class="pure-u-1-3">
-                                <div class="spec-item detail">1 000</div>
+                        <div class="pure-g">
+                            <div class="pure-u-1 pure-u-md-2-5">
+                                <div class="pure-g techspecs">
+                                    <div class="pure-u-1-3" style="text-align: center;"><strong>GENERATOR</strong> </div>
+                                    <div class="pure-u-1-3"></div>
+                                    <div class="pure-u-1-3" style="text-align: center;"> <strong>LIQUID</strong> </div>
+                                    <div class="pure-u-1-3">
+                                        <div class="spec-item detail">1 000</div>
+                                    </div>
+                                    <div class="pure-u-1-3">
+                                        <div class="spec-item"> <strong>Total Issuance</strong>
+                                            <br><i class="fa fa-bar-chart" aria-hidden="true"></i> </div>
+                                    </div>
+                                    <div class="pure-u-1-3">
+                                        <div class="spec-item detail">1 000 000</div>
+                                    </div>
+                                    <div class="pure-u-1">
+                                        <div class="spacer"></div>
+                                    </div>
+                                    <div class="pure-u-1-3">
+                                        <div class="spec-item detail">Initial Confidence Offering</div>
+                                    </div>
+                                    <div class="pure-u-1-3">
+                                        <div class="spec-item"> <strong>Emission</strong>
+                                            <br><i class="fa fa-line-chart" aria-hidden="true"></i> </div>
+                                    </div>
+                                    <div class="pure-u-1-3">
+                                        <div class="spec-item detail">Proof of Time</div>
+                                    </div>
+                                    <div class="pure-u-1">
+                                        <div class="spacer"></div>
+                                    </div>
+                                    <div class="pure-u-1-3">
+                                        <div class="spec-item detail">18</div>
+                                    </div>
+                                    <div class="pure-u-1-3">
+                                        <div class="spec-item"> <strong>Decimals</strong>
+                                            <br><i class="fa fa-database" aria-hidden="true"></i> </div>
+                                    </div>
+                                    <div class="pure-u-1-3">
+                                        <div class="spec-item detail">18</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="pure-u-1-3">
-                                <div class="spec-item"> <strong>Total Issuance</strong>
-                                    <br><i class="fa fa-bar-chart" aria-hidden="true"></i> </div>
+                            <div class="pure-u-1 pure-u-md-1-5">
+                                <div class="spacer"> </div>
                             </div>
-                            <div class="pure-u-1-3">
-                                <div class="spec-item detail">1 000 000</div>
-                            </div>
-                            <div class="pure-u-1">
-                                <div class="spacer"></div>
-                            </div>
-                            <div class="pure-u-1-3">
-                                <div class="spec-item detail">Initial Confidence Offering</div>
-                            </div>
-                            <div class="pure-u-1-3">
-                                <div class="spec-item"> <strong>Emission</strong>
-                                    <br><i class="fa fa-line-chart" aria-hidden="true"></i> </div>
-                            </div>
-                            <div class="pure-u-1-3">
-                                <div class="spec-item detail">Proof of Time</div>
-                            </div>
-                            <div class="pure-u-1">
-                                <div class="spacer"></div>
-                            </div>
-                            <div class="pure-u-1-3">
-                                <div class="spec-item detail">18</div>
-                            </div>
-                            <div class="pure-u-1-3">
-                                <div class="spec-item"> <strong>Decimals</strong>
-                                    <br><i class="fa fa-database" aria-hidden="true"></i> </div>
-                            </div>
-                            <div class="pure-u-1-3">
-                                <div class="spec-item detail">18</div>
+                            <div class="pure-u-1 pure-u-md-2-5">
+                                <div class="pure-g charts">
+                                    <div class="pure-u-1" style="margin-bottom: 5px;"><span class="chartlabel">GENERATOR Distribution</span>
+                                        <canvas id="dis0"></canvas>
+                                    </div>
+                                    <div class="pure-u-1"><span class="chartlabel">Developer Distribution</span>
+                                        <canvas id="dis1"></canvas>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -322,7 +333,7 @@
                 <div class="pure-u-6-24 pure-u-xl-3-24">
                     <a target="_blank" href="http://reddit.com/r/liquidaeon"> <i class="fa fa-reddit big-icon"></i></a>
                 </div>
-                <div class="pure-u-1-1">
+                <div class="pure-u-1">
                     <div style="color:white; margin-top: 20px; margin-bottom: 20px;" class="is-center">L I Q U I D A E O N &nbsp; 2 0 1 7</div>
                 </div>
             </div>
@@ -341,7 +352,7 @@
         });
         renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
         renderer.setSize(width, height);
-        renderer.setClearColor(0x5edeef);
+        renderer.setClearColor(0x51bccb);
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera(100, width / height, 0.1, 10000);
         camera.position.set(0, 0, 300);
@@ -400,6 +411,52 @@
         window.addEventListener("resize", function () {
             resizeTm = clearTimeout(resizeTm);
             resizeTm = setTimeout(onResize, 200);
+        });
+        var dis0 = new Chart(document.getElementById("dis0"), {
+            type: 'doughnut'
+            , data: {
+                labels: ["Developers", "Initial Confidence Offering"]
+                , datasets: [{
+                    data: [10, 90]
+                    , backgroundColor: [
+                        'rgba(0, 9, 0, 0)'
+                        , 'rgb(255, 255, 255)'
+                    ]
+                    , borderWidth: 0
+        }]
+            }
+            , options: {
+                legend: {
+                    display: false
+                    , labels: {
+                        display: false
+                    }
+                }
+            }
+        });
+        var dis1 = new Chart(document.getElementById("dis1"), {
+            type: 'doughnut'
+            , data: {
+                labels: ["Airdrop", "Development", "Promotions/Bounties", "Time-Locked Escrow"]
+                , datasets: [{
+                    data: [10, 25, 25, 40]
+                    , backgroundColor: [
+                        'rgba(0, 0, 0, 0)'
+                        , 'rgba(255, 255, 255, .25)'
+                        , 'rgba(255, 255, 255, .5)'
+                        , 'rgb(255, 255, 255)'
+                    ]
+                    , borderWidth: 0
+        }]
+            }
+            , options: {
+                legend: {
+                    display: false
+                    , labels: {
+                        display: false
+                    }
+                }
+            }
         });
     </script>
 </body>
